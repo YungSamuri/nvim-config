@@ -2,9 +2,9 @@
 -- General
 -----------------------------------------------------------
 -- Set leader key to space
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 -- Set leader key to space
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ' '
 
 -- Number of spaces a tab represents
 vim.opt.tabstop = 2
@@ -39,13 +39,13 @@ vim.opt.numberwidth = 1
 vim.opt.cursorline = true
 
 -- Better completion experience
-vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.completeopt = { 'menuone', 'noselect' }
 
 -- Enable 24-bit color
 vim.opt.termguicolors = true
 
 -- Enable the sign column to prevent the screen from jumping
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = 'yes'
 
 -- Always keep 8 lines above/below cursor unless at start/end of file
 vim.opt.scrolloff = 8
@@ -54,13 +54,13 @@ vim.opt.scrolloff = 8
 vim.opt.lazyredraw = true
 
 -- Highlight yank
-vim.api.nvim_create_autocmd("textyankpost", {
-	group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),
-	pattern = "*",
-	desc = "highlight selection on yank",
-	callback = function()
-		vim.highlight.on_yank({ timeout = 200, visual = true })
-	end,
+vim.api.nvim_create_autocmd('textyankpost', {
+  group = vim.api.nvim_create_augroup('highlight_yank', { clear = true }),
+  pattern = '*',
+  desc = 'highlight selection on yank',
+  callback = function()
+    vim.highlight.on_yank({ timeout = 200, visual = true })
+  end,
 })
 
 -----------------------------------------------------------
