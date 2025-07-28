@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd('FileType', {
       mason = true,
       mason_backdrop = true,
       harpoon = true,
+      qf = true,
     }
     if (unallowed[vim.bo.filetype]) then
       return
