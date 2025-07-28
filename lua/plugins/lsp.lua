@@ -22,14 +22,14 @@ return {
       ts_ls = {},
       eslint = {},
       glint = {},
-      sqls = {},
+      sqlls = {},
     },
   },
   config = function(_, opts)
     require('mason').setup()
 
     require('mason-lspconfig').setup({
-      ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'eslint', 'sqls', 'glint', }
+      ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'eslint', 'sqlls', 'glint', }
     })
 
     require('lspconfig').gdscript.setup({})
