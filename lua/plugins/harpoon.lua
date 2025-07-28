@@ -28,11 +28,12 @@ return {
       }):find()
     end
 
-    vim.keymap.set('n', '<C-e>', function() toggle_telescope(harpoon:list()) end,
-      { desc = 'Open harpoon window' })
-
     vim.keymap.set('n', '<leader>ha', function() harpoon:list():add() end)
-    vim.keymap.set('n', '<leader>he', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+    -- Open harpoon with telescope (default)
+    vim.keymap.set('n', '<leader>he', function() toggle_telescope(harpoon:list()) end,
+      { desc = 'Open harpoon window' })
+    -- Open the OG harpoon UI
+    vim.keymap.set('n', '<C-e>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
     vim.keymap.set('n', '<leader>hh', function() harpoon:list():select(1) end)
     vim.keymap.set('n', '<leader>hj', function() harpoon:list():select(2) end)
