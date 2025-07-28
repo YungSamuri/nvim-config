@@ -1,9 +1,16 @@
 return {
   'cpea2506/one_monokai.nvim',
   config = function()
+    vim.cmd [[colorscheme one_monokai]]
     require('one_monokai').setup({
-      vim.cmd [[colorscheme one_monokai]],
-      transparent = true,
+      highlights = function(colors)
+        return {
+          ['@variable.glimmer'] = { link = 'Identifier' },
+          ['@tag.delimiter.glimmer'] = { link = '' },
+          ['@keyword.conditional.glimmer'] = { link = 'Keyword' },
+          ['@function.glimmer'] = { fg = colors.orange },
+        }
+      end
     })
   end
 }

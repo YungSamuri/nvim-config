@@ -20,8 +20,18 @@ vim.opt.smartindent = true
 -- Copy indent from current line when starting new line
 vim.opt.autoindent = true
 
+-- Speeds up plugin wait time
+vim.opt.updatetime = 50
+
 -- Persistant undo file history
 vim.opt.undofile = true
+
+-- Disable default file explorer
+vim.g.loaded_netrw       = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Notify neovim that a nerd font is installed
+vim.g.have_nerd_font = true
 
 -----------------------------------------------------------
 -- UI Config
@@ -49,6 +59,10 @@ vim.opt.signcolumn = 'yes'
 
 -- Always keep 8 lines above/below cursor unless at start/end of file
 vim.opt.scrolloff = 8
+
+-- Better splitting
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 -- Faster scrolling
 vim.opt.lazyredraw = true

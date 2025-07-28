@@ -16,14 +16,20 @@ return {
         },
       },
       omnisharp = {},
-      bashls = {}
+      bashls = {},
+      html = {},
+      cssls = {},
+      ts_ls = {},
+      eslint = {},
+      glint = {},
+      sqls = {},
     },
   },
   config = function(_, opts)
     require('mason').setup()
 
     require('mason-lspconfig').setup({
-      ensure_installed = { 'lua_ls', 'omnisharp', 'bashls' }
+      ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'eslint', 'sqls', 'glint', }
     })
 
     require('lspconfig').gdscript.setup({})
