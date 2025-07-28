@@ -57,8 +57,8 @@ vim.keymap.set('v', '<leader>', '<nop>')
 vim.keymap.set('v', '<leader>y', '"+y')
 
 -- Move selection up and down
-vim.keymap.set('v', '<C-Down>', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', '<C-Up>', ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv")
 
 vim.api.nvim_create_autocmd(
   'LspAttach',
