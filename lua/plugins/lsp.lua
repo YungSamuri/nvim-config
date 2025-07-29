@@ -23,6 +23,7 @@ return {
       eslint = {},
       glint = {},
       sqlls = {},
+      gdscript = {},
     },
   },
   config = function(_, opts)
@@ -33,10 +34,11 @@ return {
     })
 
     require('lspconfig').gdscript.setup({})
-
+    local lspconfig = require('lspconfig')
     for server, config in pairs(opts.servers) do
       vim.lsp.config(server, config)
       vim.lsp.enable(server)
+      lspconfig[server].setup(config)
     end
   end
 }
