@@ -1,0 +1,3 @@
+[submodule "parsers/tree-sitter-hbsml"]
+	path = parsers/tree-sitter-hbsml
+	url = git@github.com:YungSamuri/tree-sitter-hbsml.git

@@ -6,7 +6,7 @@ return {
       highlights = function(colors)
         return {
           ['@variable.glimmer'] = { link = 'Identifier' },
-          ['@tag.delimiter.html'] = { link = '' },
+          ['@tag.delimiter.hbsml'] = { link = '' },
           ['@keyword.conditional.glimmer'] = { link = 'Keyword' },
           ['@function.glimmer'] = { fg = colors.orange },
         }

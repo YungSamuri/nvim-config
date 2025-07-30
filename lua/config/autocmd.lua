@@ -23,9 +23,22 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'TSUpdate',
+  callback = function()
+    require('nvim-treesitter.parsers').hbsml = {
+      install_info = {
+        path = '~/.config/nvim/parsers/tree-sitter-hbsml/',
+        queries = '~/.config/nvim/after/queries/hbsml/'
+      }
+    }
+  end
+})
+
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.hbs",
   callback = function()
-    vim.bo.filetype = "html"
+    vim.bo.filetype = "hbsml"
   end,
 })
