@@ -7,6 +7,7 @@ return {
         return {
           ['@variable.glimmer'] = { link = 'Identifier' },
           ['@tag.delimiter.hbsml'] = { link = '' },
+          ['@tag.delimiter.glimmer'] = { fg = colors.purple },
           ['@keyword.conditional.glimmer'] = { link = 'Keyword' },
           ['@function.glimmer'] = { fg = colors.orange },
         }
