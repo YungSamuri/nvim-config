@@ -13,6 +13,7 @@ return {
       defaults = {
         hidden = true,
         no_ignore = true,
+        layout_strategy = 'flex',
       }
     })
   end,

@@ -14,6 +14,7 @@ vim.api.nvim_create_autocmd('FileType', {
       mason_backdrop = true,
       harpoon = true,
       qf = true,
+      tmux = true,
     }
     if (unallowed[vim.bo.filetype]) then
       return
