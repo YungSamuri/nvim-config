@@ -9,6 +9,8 @@
 [] vim-cool
     - For auto enabling and disabling search highlights
     - May not work because it's written for vim not neovim
+[] Lualine
+    - Or similar
 
 ## Treesitter Injection Queries
 [] Injecting SQL into bash
