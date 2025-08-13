@@ -15,6 +15,7 @@ vim.api.nvim_create_autocmd('FileType', {
       harpoon = true,
       qf = true,
       tmux = true,
+      ['dap-repl'] = true,
     }
     if (unallowed[vim.bo.filetype]) then
       return
