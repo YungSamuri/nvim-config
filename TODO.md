@@ -9,7 +9,7 @@
 [] vim-cool
     - For auto enabling and disabling search highlights
     - May not work because it's written for vim not neovim
-[] Lualine
+[x] Lualine
     - Or similar
 
 ## Treesitter Injection Queries
