@@ -11,8 +11,6 @@ return {
   config = function()
     require('telescope').setup({
       defaults = {
-        hidden = true,
-        no_ignore = true,
         layout_strategy = 'flex',
         layout_config = {
           flip_columns = 160,

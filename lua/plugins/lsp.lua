@@ -36,9 +36,13 @@ return {
     require('lspconfig').gdscript.setup({})
     local lspconfig = require('lspconfig')
     for server, config in pairs(opts.servers) do
-      vim.lsp.config(server, config)
+      if next(config) == nil then
+        vim.lsp.config(server, config)
+      end
       vim.lsp.enable(server)
-      lspconfig[server].setup(config)
+      if next(config) == nil then
+        lspconfig[server].setup(config)
+      end
     end
   end
 }
