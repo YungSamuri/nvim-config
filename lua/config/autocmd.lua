@@ -16,6 +16,8 @@ vim.api.nvim_create_autocmd('FileType', {
       qf = true,
       tmux = true,
       ['dap-repl'] = true,
+      ['dap-float'] = true,
+      conf = true,
     }
     if (unallowed[vim.bo.filetype]) then
       return

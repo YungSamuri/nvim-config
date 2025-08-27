@@ -48,7 +48,7 @@ vim.keymap.set('n', '<leader>p', '"_dP')
 vim.keymap.set('n', '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>Y', '"+Y')
 
--- Open buffer below
+-- Open buffer down or to the right
 vim.keymap.set('n', '<leader>sd', ':split<CR>')
 vim.keymap.set('n', '<leader>sr', ':vsplit<CR>')
 
