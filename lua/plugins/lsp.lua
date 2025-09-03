@@ -33,8 +33,8 @@ return {
       ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'eslint', 'sqlls', 'glint', }
     })
 
-    require('lspconfig').gdscript.setup({})
     local lspconfig = require('lspconfig')
+    lspconfig.gdscript.setup({})
     for server, config in pairs(opts.servers) do
       vim.lsp.config(server, config)
       vim.lsp.enable(server)
