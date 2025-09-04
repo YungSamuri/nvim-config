@@ -24,7 +24,17 @@ return {
       glint = {},
       sqlls = {},
       gdscript = {},
-      pythonlsp = {},
+      pylsp = {
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = {
+                ignore = { "E501" },
+              }
+            }
+          }
+        }
+      },
     },
   },
   config = function(_, opts)
