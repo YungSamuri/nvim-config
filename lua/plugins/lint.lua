@@ -2,7 +2,8 @@ return {
   'mfussenegger/nvim-lint',
   config = function()
     require('lint').linters_by_ft = {
-      python = { 'mypy' }
+      python = { 'mypy' },
+      typescript = { 'biomejs' },
     }
   end
 }

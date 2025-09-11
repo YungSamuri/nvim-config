@@ -47,7 +47,32 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--   callback = function(args)
+--     local client = vim.lsp.get_client_by_id(args.data.client_id)
+-- 
+--     if not client then
+--       return
+--     end
+-- 
+--     if client.name == 'biome' then
+--       vim.api.nvim_create_autocmd('BufWritePre', {
+--         group = vim.api.nvim_create_augroup('BiomeFixAll', { clear = true }),
+--         callback = function()
+--           vim.lsp.buf.code_action({
+--             context = {
+--               only = { 'source.fixAll.biome' },
+--               diagnostics = {},
+--             },
+--             apply = true,
+--           })
+--         end,
+--       })
+--     end
+--   end,
+-- })
+
+vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost' }, {
   callback = function()
     require('lint').try_lint()
   end

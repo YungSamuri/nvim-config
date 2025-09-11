@@ -20,7 +20,6 @@ return {
       html = {},
       cssls = {},
       ts_ls = {},
-      eslint = {},
       glint = {},
       sqlls = {},
       gdscript = {},
@@ -35,13 +34,14 @@ return {
           }
         }
       },
+      biome = {},
     },
   },
   config = function(_, opts)
     require('mason').setup()
 
     require('mason-lspconfig').setup({
-      ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'eslint', 'sqlls', 'glint', 'pylsp', }
+      ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'biome@1.9.4', 'sqlls', 'glint', 'pylsp', }
     })
 
     local lspconfig = require('lspconfig')
