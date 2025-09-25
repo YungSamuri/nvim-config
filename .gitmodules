@@ -1,3 +1,6 @@
 [submodule "parsers/tree-sitter-hbsml"]
 	path = parsers/tree-sitter-hbsml
 	url = git@github.com:YungSamuri/tree-sitter-hbsml.git
+[submodule "parsers/superhtml"]
+	path = parsers/superhtml
+	url = git@github.com:kristoff-it/superhtml.git
