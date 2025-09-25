@@ -29,7 +29,7 @@ vim.api.nvim_create_autocmd('FileType', {
 
 
 vim.api.nvim_create_autocmd('User', {
-  pattern = 'TSUpdate',
+  pattern = { 'TSUpdate' },
   callback = function()
     require('nvim-treesitter.parsers').hbsml = {
       install_info = {
@@ -37,24 +37,28 @@ vim.api.nvim_create_autocmd('User', {
         queries = '~/.config/nvim/after/queries/hbsml/'
       }
     }
+    require('nvim-treesitter.parsers').superhtml.install_info = {
+      path = '~/.config/nvim/parsers/superhtml/tree-sitter-superhtml/',
+      queries = '~/.config/nvim/after/queries/superhtml/'
+    }
   end
 })
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.hbs",
   callback = function()
-    vim.bo.filetype = "hbsml"
+    vim.bo.filetype = "superhtml"
   end,
 })
 
 -- vim.api.nvim_create_autocmd('LspAttach', {
 --   callback = function(args)
 --     local client = vim.lsp.get_client_by_id(args.data.client_id)
--- 
+--
 --     if not client then
 --       return
 --     end
--- 
+--
 --     if client.name == 'biome' then
 --       vim.api.nvim_create_autocmd('BufWritePre', {
 --         group = vim.api.nvim_create_augroup('BiomeFixAll', { clear = true }),
@@ -76,4 +80,14 @@ vim.api.nvim_create_autocmd({ 'InsertLeave', 'BufWritePost' }, {
   callback = function()
     require('lint').try_lint()
   end
+})
+
+-- Filetype tab size overrides
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = "superhtml",
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.expandtab = true
+  end,
 })

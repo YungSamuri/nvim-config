@@ -3,7 +3,8 @@ return {
   config = function()
     require('rainbow-delimiters.setup').setup({
       query = {
-        hbsml = 'rainbow-tag-names'
+        hbsml = 'rainbow-tag-names',
+        superhtml = 'rainbow-tag-names',
       }
     })
   end

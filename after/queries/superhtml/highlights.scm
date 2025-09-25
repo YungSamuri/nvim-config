@@ -1,0 +1,1 @@
+../../../parsers/superhtml/tree-sitter-superhtml/queries/highlights.scm

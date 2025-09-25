@@ -34,7 +34,6 @@ return {
     vim.keymap.set("n", "<Leader>dk", dap.step_out, { desc = "DAP: Step Out" })
     vim.keymap.set("n", "<Leader>dt", dap.terminate, { desc = "DAP: Terminate" })
     vim.keymap.set("n", "<Leader>dr", dap.repl.open, { desc = "DAP: REPL" })
-    vim.keymap.set("n", "<Leader>dh", dap.repl.open, { desc = "DAP: REPL" })
     vim.keymap.set({ 'n', 'v' }, '<Leader>dh', function()
       require('dap.ui.widgets').hover()
     end)
