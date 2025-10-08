@@ -28,7 +28,7 @@ return {
           pylsp = {
             plugins = {
               pycodestyle = {
-                ignore = { "E501" },
+                ignore = { 'E501', 'E203', 'W503' },
               }
             }
           }
