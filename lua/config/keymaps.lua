@@ -11,13 +11,16 @@ vim.keymap.set('n', 'U', '<C-r>')
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { silent = false })
 vim.keymap.set('n', '<leader>q', '<cmd>q<cr>', { silent = false })
 
+-- Reset the keybind to remove search highlights
+vim.keymap.set('n', '<S-l>', ':noh<CR>')
+
 -- Swap between split buffers
 vim.keymap.set('n', '<C-Left>', ':wincmd h<CR>')
 vim.keymap.set('n', '<C-Right>', ':wincmd l<CR>')
-vim.keymap.set('n', '<leader>sh', ':wincmd h<CR>')
-vim.keymap.set('n', '<leader>sj', ':wincmd j<CR>')
-vim.keymap.set('n', '<leader>sk', ':wincmd k<CR>')
-vim.keymap.set('n', '<leader>sl', ':wincmd l<CR>')
+vim.keymap.set('n', '<C-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<C-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<C-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<C-l>', ':wincmd l<CR>')
 
 -- Save and quit current file quicker
 vim.keymap.set('n', '<leader>w', '<cmd>w<cr>', { silent = false })
