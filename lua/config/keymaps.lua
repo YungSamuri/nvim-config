@@ -55,6 +55,9 @@ vim.keymap.set('n', '<leader>Y', '"+Y')
 vim.keymap.set('n', '<leader>sd', ':split<CR>')
 vim.keymap.set('n', '<leader>sr', ':vsplit<CR>')
 
+-- Execute the current line of text as a shell command
+vim.keymap.set('n', '<S-Q>', '!!$SHELL<CR>')
+
 -----------------------------------------------------------
 -- Visual Mode
 -----------------------------------------------------------
@@ -67,6 +70,9 @@ vim.keymap.set('v', '<leader>y', '"+y')
 -- Move selection up and down
 vim.keymap.set('v', '<C-j>', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', '<C-k>', ":m '<-2<CR>gv=gv")
+
+-- Execute the current selection as shell commands
+vim.keymap.set('v', '<S-Q>', '!$SHELL<CR>')
 
 vim.api.nvim_create_autocmd(
   'LspAttach',
