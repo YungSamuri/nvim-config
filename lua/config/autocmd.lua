@@ -1,27 +1,20 @@
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '*' },
+vim.api.nvim_create_autocmd("User", {
+  pattern = "TSUpdate",
   callback = function()
-    local unallowed = {
-      TelescopePreview = true,
-      TelescopePrompt = true,
-      TelescopeResults = true,
-      NvimTree = true,
-      ['blink-cmp-documentation'] = true,
-      ['blink-cmp-menu'] = true,
-      lazy = true,
-      lazy_backdrop = true,
-      mason = true,
-      mason_backdrop = true,
-      harpoon = true,
-      qf = true,
-      tmux = true,
-      ['dap-repl'] = true,
-      ['dap-float'] = true,
-      conf = true,
+    require("nvim-treesitter.parsers").zsh = {
+      install_info = {
+        "https://github.com/georgeharker/tree-sitter-zsh",
+        generate_from_json = false, -- only needed if repo does not contain `src/grammar.json` either
+        queries = 'nvim-queries',   -- also install queries from given directory
+      },
+      tier = 3,
     }
-    if (unallowed[vim.bo.filetype]) then
-      return
-    end
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'bash', 'zsh', 'lua', 'javascript', 'typescript', 'css', 'superhtml', 'html', 'sql', 'json', 'yaml', 'dockerfile', 'python' },
+  callback = function()
     vim.treesitter.start()
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
