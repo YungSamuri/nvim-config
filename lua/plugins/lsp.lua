@@ -43,9 +43,10 @@ return {
     require('mason-lspconfig').setup({
       ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'biome@1.9.4', 'sqlls', 'glint', 'pylsp', }
     })
-
     for server, config in pairs(opts.servers) do
-      vim.lsp.config(server, config)
+      if server ~= 'glint' then
+        vim.lsp.config(server, config)
+      end
       vim.lsp.enable(server)
     end
   end
