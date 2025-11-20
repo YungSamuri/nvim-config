@@ -1,9 +1,9 @@
 return {
   'nvim-telescope/telescope.nvim',
   keys = {
-    { '<leader>tf', '<cmd>Telescope find_files<cr>' },
-    { '<leader>tg', '<cmd>Telescope live_grep<cr>' },
-    { '<leader>tr', '<cmd>Telescope resume<cr>' },
+    { '<leader>lf', '<cmd>Telescope find_files<cr>' },
+    { '<leader>lg', '<cmd>Telescope live_grep<cr>' },
+    { '<leader>lr', '<cmd>Telescope resume<cr>' },
   },
   branch = 'master',
   dependencies = {
