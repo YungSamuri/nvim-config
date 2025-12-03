@@ -36,6 +36,7 @@ return {
       },
       biome = {},
       gopls = {},
+      postgrestools = {},
     },
   },
   config = function(_, opts)
@@ -45,9 +46,7 @@ return {
       ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'biome@1.9.4', 'sqlls', 'glint', 'pylsp', }
     })
     for server, config in pairs(opts.servers) do
-      if server ~= 'glint' then
-        vim.lsp.config(server, config)
-      end
+      vim.lsp.config(server, config)
       vim.lsp.enable(server)
     end
   end
