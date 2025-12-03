@@ -35,6 +35,7 @@ return {
         }
       },
       biome = {},
+      gopls = {},
     },
   },
   config = function(_, opts)
