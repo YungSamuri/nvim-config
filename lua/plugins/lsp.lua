@@ -43,7 +43,7 @@ return {
     require('mason').setup()
 
     require('mason-lspconfig').setup({
-      ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'biome@1.9.4', 'sqlls', 'glint', 'pylsp', }
+      ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'biome@1.9.4', 'sqlls', 'glint', 'pylsp', 'gopls', }
     })
     for server, config in pairs(opts.servers) do
       vim.lsp.config(server, config)
