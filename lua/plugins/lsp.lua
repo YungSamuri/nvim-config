@@ -20,7 +20,6 @@ return {
       html = {},
       cssls = {},
       ts_ls = {},
-      glint = {},
       sqlls = {},
       gdscript = {},
       pylsp = {
@@ -35,7 +34,19 @@ return {
         }
       },
       biome = {},
-      gopls = {},
+      gopls = {
+        settings = {
+          gopls = {
+            buildFlags = { "-tags=integration" },
+            env = { GOFLAGS = "-tags=integration" },
+            --staticcheck = true,
+            hints = {
+              assignVariableTypes = true,
+              parameterNames = true,
+            },
+          },
+        },
+      },
       postgrestools = {},
     },
   },
@@ -43,11 +54,11 @@ return {
     require('mason').setup()
 
     require('mason-lspconfig').setup({
-      ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'biome@1.9.4', 'sqlls', 'glint', 'pylsp', 'gopls', }
+      ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'biome@1.9.4', 'sqlls', 'pylsp', 'gopls', }
     })
     for server, config in pairs(opts.servers) do
       vim.lsp.config(server, config)
-      vim.lsp.enable(server)
+      --vim.lsp.enable(server)
     end
   end
 }

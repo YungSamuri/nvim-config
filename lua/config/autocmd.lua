@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd('User', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'bash', 'zsh', 'lua', 'javascript', 'typescript', 'css', 'superhtml', 'html', 'sql', 'json', 'yaml', 'dockerfile', 'python', 'go', 'gomod', 'gosum' },
+  pattern = { 'bash', 'zsh', 'lua', 'javascript', 'typescript', 'css', 'html', 'sql', 'json', 'yaml', 'dockerfile', 'python', 'go', 'gomod', 'gosum', 'glimmer', 'superhtml' },
   callback = function()
     vim.treesitter.start()
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
