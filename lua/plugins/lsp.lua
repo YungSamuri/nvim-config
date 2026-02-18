@@ -42,7 +42,7 @@ return {
         gopls = {
           settings = {
             gopls = {
-              buildFlags = { "-tags=integration" },
+              buildFlags = { "-tags=unit,integration" },
               --env = { GOFLAGS = "-tags=integration" },
               --staticcheck = true,
               hints = {

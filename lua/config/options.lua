@@ -33,6 +33,9 @@ vim.g.loaded_netrwPlugin = 1
 -- Notify neovim that a nerd font is installed
 vim.g.have_nerd_font     = true
 
+-- Set folds to all open by default
+vim.opt.foldlevelstart = 99
+
 -----------------------------------------------------------
 -- UI Config
 -----------------------------------------------------------
