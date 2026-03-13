@@ -13,12 +13,12 @@ vim.api.nvim_create_autocmd('User', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'bash', 'zsh', 'lua', 'javascript', 'typescript', 'css', 'html', 'sql', 'json', 'yaml', 'dockerfile', 'python', 'go', 'gomod', 'gosum', 'glimmer', 'superhtml' },
+  pattern = { 'bash', 'zsh', 'lua', 'javascript', 'typescript', 'css', 'html', 'sql', 'json', 'yaml', 'dockerfile', 'python', 'go', 'gomod', 'gosum', 'glimmer', 'superhtml', 'kotlin', 'java' },
   callback = function()
     vim.treesitter.start()
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-    vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.wo[0][0].foldmethod = 'expr'
+    -- vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    -- vim.wo[0][0].foldmethod = 'expr'
   end,
 })
 

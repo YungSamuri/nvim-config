@@ -11,7 +11,7 @@ return {
     },
     config = function()
       require('mason-lspconfig').setup({
-        ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'biome@1.9.4', 'sqlls', 'pylsp', 'gopls', }
+        ensure_installed = { 'lua_ls', 'omnisharp', 'bashls', 'html', 'ts_ls', 'cssls', 'biome@1.9.4', 'sqlls', 'pylsp', 'gopls', 'kotlin_lsp' }
       })
     end,
   },

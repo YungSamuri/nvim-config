@@ -81,7 +81,7 @@ vim.api.nvim_create_autocmd('textyankpost', {
 })
 
 -- Show folds on the left
-vim.opt.foldcolumn = 'auto:9'
+-- vim.opt.foldcolumn = 'auto:9'
 
 -----------------------------------------------------------
 -- Search Config

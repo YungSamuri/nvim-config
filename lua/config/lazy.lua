@@ -23,5 +23,11 @@ require('lazy').setup({
     { import = 'plugins' },
   },
   install = { colorscheme = { 'one_monokai' } },
-  checker = { enabled = true, notify = false },
+  checker = { enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    enabled = true,
+    notify = false,
+  },
 })
