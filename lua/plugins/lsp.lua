@@ -44,7 +44,7 @@ return {
             gopls = {
               buildFlags = { "-tags=unit,integration" },
               --env = { GOFLAGS = "-tags=integration" },
-              --staticcheck = true,
+              staticcheck = true,
               hints = {
                 assignVariableTypes = true,
                 parameterNames = true,

@@ -102,18 +102,20 @@ vim.api.nvim_create_autocmd(
           border = 'rounded',
         })
       end, opts)
-      -- Go to next diagnostic and open it
-      vim.keymap.set('n', '<leader>nd', function()
+      -- Go to next error diagnostic and open it
+      vim.keymap.set('n', '<leader>ne', function()
         vim.diagnostic.jump({
           count=1,
           float=true,
+          severity=vim.diagnostic.severity.ERROR
         })
       end, opts)
-      -- Go to previous diagnostic and open it
-      vim.keymap.set('n', '<leader>pd', function()
+      -- Go to previous error diagnostic and open it
+      vim.keymap.set('n', '<leader>pe', function()
         vim.diagnostic.jump({
           count=-1,
           float=true,
+          severity=vim.diagnostic.severity.ERROR
         })
       end, opts)
     end,
