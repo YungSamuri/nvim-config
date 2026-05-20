@@ -73,8 +73,8 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
   callback = function()
+    -- vim.lsp.buf.format({ async = true })
     require('lint').try_lint()
-    vim.lsp.buf.format({ async = true })
   end
 })
 
