@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd('User', {
 })
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.hbs",
+  pattern = {'*.hbs', '*.tmpl'},
   callback = function()
     vim.bo.filetype = "superhtml"
   end,
@@ -79,11 +79,11 @@ vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
 })
 
 -- Filetype tab size overrides
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = "superhtml",
-  callback = function()
-    vim.opt_local.tabstop = 4
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.expandtab = true
-  end,
-})
+--vim.api.nvim_create_autocmd('FileType', {
+--  pattern = "superhtml",
+--  callback = function()
+--    vim.opt_local.tabstop = 4
+--    vim.opt_local.shiftwidth = 4
+--    vim.opt_local.expandtab = true
+--  end,
+--})

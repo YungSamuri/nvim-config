@@ -118,6 +118,22 @@ vim.api.nvim_create_autocmd(
           severity=vim.diagnostic.severity.ERROR
         })
       end, opts)
+      -- Go to next warning diagnostic and open it
+      vim.keymap.set('n', '<leader>nw', function()
+        vim.diagnostic.jump({
+          count=1,
+          float=true,
+          severity=vim.diagnostic.severity.WARN
+        })
+      end, opts)
+      -- Go to previous warning diagnostic and open it
+      vim.keymap.set('n', '<leader>pw', function()
+        vim.diagnostic.jump({
+          count=-1,
+          float=true,
+          severity=vim.diagnostic.severity.WARN
+        })
+      end, opts)
     end,
   }
 )
