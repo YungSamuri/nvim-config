@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd('User', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'bash', 'zsh', 'lua', 'javascript', 'typescript', 'css', 'html', 'sql', 'json', 'yaml', 'dockerfile', 'python', 'go', 'gomod', 'gosum', 'glimmer', 'superhtml', 'kotlin', 'java' },
+  pattern = { 'bash', 'zsh', 'lua', 'javascript', 'typescript', 'css', 'html', 'sql', 'json', 'yaml', 'dockerfile', 'python', 'go', 'gomod', 'gosum', 'glimmer', 'superhtml', 'kotlin', 'java', 'gotmpl', 'tmpl' },
   callback = function()
     vim.treesitter.start()
     vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
@@ -40,11 +40,25 @@ vim.api.nvim_create_autocmd('User', {
 })
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = {'*.hbs', '*.tmpl'},
+  pattern = {'*.hbs'},
   callback = function()
     vim.bo.filetype = "superhtml"
   end,
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = {'*.tmpl'},
+  callback = function()
+    vim.bo.filetype = "gotmpl"
+  end,
+})
+
+vim.filetype.add({
+  extension = {
+    gotmpl = 'gotmpl',
+  }
+})
+
 
 -- vim.api.nvim_create_autocmd('LspAttach', {
 --   callback = function(args)

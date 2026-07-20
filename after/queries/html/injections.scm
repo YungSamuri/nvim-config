@@ -1,11 +1,11 @@
 ;; extends
 
-([
-  (text) @injection.content
-  (attribute_value) @injection.content
-]
-  (#lua-match? @injection.content "{{[^}]*}}")
-  (#set! injection.language "glimmer"))
+;;([
+;;  (text) @injection.content
+;;  (attribute_value) @injection.content
+;;]
+;;  (#lua-match? @injection.content "{{[^}]*}}")
+;;  (#set! injection.language "gotmpl"))
 
 ; AlpineJS attributes
 (start_tag

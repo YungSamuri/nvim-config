@@ -5,6 +5,7 @@ return {
       query = {
         hbsml = 'rainbow-tag-names',
         superhtml = 'rainbow-tag-names',
+        html = 'rainbow-tag-names',
       }
     })
   end
