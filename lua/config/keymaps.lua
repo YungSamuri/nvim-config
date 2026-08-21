@@ -45,7 +45,7 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Paste without replacing paste with what you are highlighted over
-vim.keymap.set('n', '<leader>p', '"_dP')
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"_dP')
 
 -- Yank to system clipboard
 vim.keymap.set('n', '<leader>y', '"+y')
@@ -105,33 +105,33 @@ vim.api.nvim_create_autocmd(
       -- Go to next error diagnostic and open it
       vim.keymap.set('n', '<leader>ne', function()
         vim.diagnostic.jump({
-          count=1,
-          float=true,
-          severity=vim.diagnostic.severity.ERROR
+          count = 1,
+          float = true,
+          severity = vim.diagnostic.severity.ERROR
         })
       end, opts)
       -- Go to previous error diagnostic and open it
       vim.keymap.set('n', '<leader>pe', function()
         vim.diagnostic.jump({
-          count=-1,
-          float=true,
-          severity=vim.diagnostic.severity.ERROR
+          count = -1,
+          float = true,
+          severity = vim.diagnostic.severity.ERROR
         })
       end, opts)
       -- Go to next warning diagnostic and open it
       vim.keymap.set('n', '<leader>nw', function()
         vim.diagnostic.jump({
-          count=1,
-          float=true,
-          severity=vim.diagnostic.severity.WARN
+          count = 1,
+          float = true,
+          severity = vim.diagnostic.severity.WARN
         })
       end, opts)
       -- Go to previous warning diagnostic and open it
       vim.keymap.set('n', '<leader>pw', function()
         vim.diagnostic.jump({
-          count=-1,
-          float=true,
-          severity=vim.diagnostic.severity.WARN
+          count = -1,
+          float = true,
+          severity = vim.diagnostic.severity.WARN
         })
       end, opts)
     end,
